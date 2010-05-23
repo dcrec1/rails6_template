@@ -1,0 +1,43 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Import the non-default scaffolding module.
+@import "blueprint/scaffolding";
+
+// To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
+// +blueprint
+
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+body {
+  @include blueprint-typography(true);
+  @include blueprint-utilities;
+  @include blueprint-debug;
+  @include blueprint-interaction;
+  @include blueprint-scaffolding;
+
+  #container {
+    @include container; }
+
+  #header, #footer {
+    @include column($blueprint-grid-columns); }
+
+  #sidebar {
+    // One third of the grid columns, rounding down. With 24 cols, this is 8.
+    $sidebar-columns: floor($blueprint-grid-columns / 3);
+    @include column($sidebar-columns); }
+
+  #content {
+    $content-columns: ceil(2 * $blueprint-grid-columns / 3);
+    @include column($content-columns, true); 
+  }
+    
+  form {
+    @include blueprint-form; 
+  }
+}
