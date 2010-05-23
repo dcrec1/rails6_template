@@ -11,6 +11,13 @@ gem 'rspec', '>=2.0.0.beta.8', :group => :test
 gem 'rspec-rails', '>=2.0.0.beta.8', :group => :test
 gem "factory_girl", :git => "git://github.com/thoughtbot/factory_girl.git", :branch => 'rails3', :group => :test
 
+gem 'cucumber', ">=0.6.3", :group => :cucumber
+gem 'cucumber-rails', ">=0.3.0", :group => :cucumber
+gem 'pickle', ">=0.2.10", :group => :cucumber
+gem 'capybara', ">=0.3.6", :group => :cucumber
+gem 'database_cleaner', ">=0.5.0", :group => :cucumber
+
+
 gem 'rails3-generators', :git => "git://github.com/indirect/rails3-generators.git"
 
 application  <<-GENERATORS 
@@ -23,6 +30,7 @@ GENERATORS
 
 run "bundle install"
 generate "rspec:install"
+generate "cucumber:skeleton"
 run "gem install compass"
 run "compass init --using blueprint --app rails"
 
