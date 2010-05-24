@@ -37,6 +37,12 @@ get "http://github.com/dcrec1/rails3_template/raw/master/gitignore" ,".gitignore
 get "http://github.com/dcrec1/rails3_template/raw/master/screen.scss", "app/stylesheets/screen.scss"
 get "http://github.com/dcrec1/rails3_template/raw/master/application.html.haml", "app/views/layouts/application.html.haml"
 
+create_file 'config/deploy.rb', <<-DEPLOY
+application = '#{app_name}'
+repository = ''
+hosts = %w() 
+DEPLOY
+
 git :init
 git :add => '.'
 git :commit => '-am "Initial commit"'
