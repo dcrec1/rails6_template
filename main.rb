@@ -5,6 +5,7 @@ gem 'inherited_resources', '>=1.1.2'
 gem 'will_paginate', '>=3.0.pre'
 gem 'devise', '>=1.1.rc1'
 gem 'formtastic', '>=0.9.8'
+gem 'friendly_id', '~>3.0'
 gem "compass", ">= 0.10.1"
 
 gem 'rspec', '>=2.0.0.beta.8', :group => :test
@@ -32,6 +33,7 @@ GENERATORS
 run "bundle install"
 generate "rspec:install"
 generate "cucumber:install --capybara --rspec --spork"
+generate "friendly_id"
 run "gem install compass"
 run "compass init --using blueprint --app rails"
 
