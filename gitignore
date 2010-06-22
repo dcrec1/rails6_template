@@ -12,6 +12,7 @@ doc/specs.html
 doc/features.html
 tags
 *.swp
+*.swo
 rerun.txt
 .bundle
 db/schema.rb
