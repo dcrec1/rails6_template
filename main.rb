@@ -8,8 +8,6 @@ gem "formtastic", :git => "git://github.com/justinfrench/formtastic.git", :branc
 gem 'friendly_id', '~>3.0'
 gem "compass", ">= 0.10.1"
 
-gem "devise"
-
 gem 'rspec', '>=2.0.0.alpha.11', :group => :test
 gem 'rspec-rails', '>=2.0.0.alpha.11', :group => :test
 gem 'remarkable', '>=4.0.0.alpha4', :group => :test
