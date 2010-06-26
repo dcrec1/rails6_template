@@ -41,6 +41,8 @@ generate "formtastic:install"
 run "gem install compass"
 run "compass init --using blueprint --app rails"
 
+run "rm public/stylesheets/*"
+
 get "http://github.com/rails/jquery-ujs/raw/master/src/rails.js", "public/javascripts/rails.js"
 get "http://github.com/dcrec1/rails3_template/raw/master/gitignore" ,".gitignore" 
 get "http://github.com/dcrec1/rails3_template/raw/master/screen.scss", "app/stylesheets/screen.scss"
