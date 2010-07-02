@@ -49,6 +49,7 @@ get "http://github.com/rails/jquery-ujs/raw/master/src/rails.js", "public/javasc
 get "http://github.com/dcrec1/rails3_template/raw/master/gitignore" ,".gitignore" 
 get "http://github.com/dcrec1/rails3_template/raw/master/screen.scss", "app/stylesheets/screen.scss"
 get "http://github.com/dcrec1/rails3_template/raw/master/application.html.haml", "app/views/layouts/application.html.haml"
+get "http://github.com/dcrec1/rails3_template/raw/master/factory_girl.rb", "features/support/factory_girl.rb"
 
 create_file 'config/deploy.rb', <<-DEPLOY
 application = '#{app_name}'
