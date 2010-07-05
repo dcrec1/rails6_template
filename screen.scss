@@ -44,6 +44,17 @@ body {
   }
     
   form {
+    @include blueprint-form;
+
+    fieldset {
+      border: 0;
+
+      label {
+        display: inline-block;
+        width: 120px;
+      }
+    }
+
     input[type=submit] {
       background: #222 url(../images/overlay.png) repeat-x;
       display: inline-block;
