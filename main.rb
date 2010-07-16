@@ -41,7 +41,7 @@ generate "pickle:skeleton --path --email"
 generate "friendly_id"
 generate "formtastic:install"
 run "gem install compass"
-run "compass init --using blueprint --app rails"
+run "compass init --using blueprint --app rails --css-dir public/stylesheets"
 
 run "rm public/stylesheets/*"
 
