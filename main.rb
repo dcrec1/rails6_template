@@ -1,6 +1,6 @@
 run "rm -Rf README public/index.html public/javascripts/* test app/views/layouts/*"
 
-gem 'haml', '>=3.0.4'
+gem 'haml', '>=3.0.14'
 gem 'inherited_resources', '>=1.1.2'
 gem 'will_paginate', '>=3.0.pre'
 gem 'devise', '>=1.1.rc2'
