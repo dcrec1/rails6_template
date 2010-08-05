@@ -60,6 +60,7 @@ get "http://github.com/dcrec1/rails3_template/raw/master/newrelic.yml", "config/
 get "http://github.com/dcrec1/rails3_template/raw/master/htaccess", "public/.htaccess"
 
 create_file 'config/deploy.rb', <<-DEPLOY
+template = 'rails3'
 application = '#{app_name}'
 repository = ''
 hosts = %w() 
