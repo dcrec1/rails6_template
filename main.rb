@@ -55,6 +55,7 @@ get "http://github.com/dcrec1/rails3_template/raw/master/factory_girl.rb", "feat
 get "http://github.com/dcrec1/rails3_template/raw/master/remarkable.rb", "spec/support/remarkable.rb"
 get "http://github.com/dcrec1/rails3_template/raw/master/build.rake", "lib/tasks/build.rake"
 get "http://github.com/dcrec1/rails3_template/raw/master/overlay.png", "public/images/overlay.png"
+get "http://github.com/dcrec1/rails3_template/raw/master/newrelic.yml", "config/newrelic.yml"
 
 create_file 'config/deploy.rb', <<-DEPLOY
 application = '#{app_name}'
