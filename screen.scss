@@ -29,7 +29,7 @@ body {
   }
 
   #header, #footer {
-    @include column($blueprint-grid-columns);
+    @include column($blueprint-grid-columns, true);
   }
 
   #sidebar {
