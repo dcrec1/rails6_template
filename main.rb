@@ -23,6 +23,7 @@ gem 'spork', ">=0.8.4", :group => :cucumber
 gem "pickle", :git => "git://github.com/codegram/pickle.git", :group => :cucumber
 
 gem "newrelic_rpm", ">=2.12.3", :group => :production
+gem "hoptoad_notifier", '>=2.3.3', :group => :production
 
 gem 'inploy'
 
@@ -57,6 +58,7 @@ get "http://github.com/dcrec1/rails3_template/raw/master/build.rake", "lib/tasks
 get "http://github.com/dcrec1/rails3_template/raw/master/build.sh", "build.sh"
 get "http://github.com/dcrec1/rails3_template/raw/master/overlay.png", "public/images/overlay.png"
 get "http://github.com/dcrec1/rails3_template/raw/master/newrelic.yml", "config/newrelic.yml"
+get "http://github.com/dcrec1/rails3_template/raw/master/hoptoad.rb", "config/initializers/hoptoad.rb"
 get "http://github.com/dcrec1/rails3_template/raw/master/htaccess", "public/.htaccess"
 
 create_file 'config/deploy.rb', <<-DEPLOY
