@@ -29,6 +29,8 @@ gem 'inploy'
 
 gem 'rails3-generators', :git => "git://github.com/indirect/rails3-generators.git"
 
+plugin 'asset_packager', :git => 'git://github.com/sbecker/asset_packager.git'
+
 application  <<-GENERATORS 
 config.generators do |g|
   g.template_engine :haml
@@ -60,6 +62,7 @@ get "http://github.com/dcrec1/rails3_template/raw/master/overlay.png", "public/i
 get "http://github.com/dcrec1/rails3_template/raw/master/newrelic.yml", "config/newrelic.yml"
 get "http://github.com/dcrec1/rails3_template/raw/master/hoptoad.rb", "config/initializers/hoptoad.rb"
 get "http://github.com/dcrec1/rails3_template/raw/master/htaccess", "public/.htaccess"
+get "http://github.com/dcrec1/rails3_template/raw/master/asset_packages.yml", "config/asset_packages.yml"
 
 create_file 'config/deploy.rb', <<-DEPLOY
 template = 'rails3'

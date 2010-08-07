@@ -3,10 +3,10 @@
 %html
   %head
     %title
-    = stylesheet_link_tag 'screen', :media => 'screen, projection'
-    = stylesheet_link_tag 'print', :media => 'print'
+    = raw stylesheet_link_merged('screen', :media => 'screen, projection')
+    = raw stylesheet_link_merged('print', :media => 'print')
     /[if lt IE 8]
-      = stylesheet_link_tag 'ie', :media => 'screen, projection'
+      = raw stylesheet_link_merged('ie', :media => 'screen, projection')
     = csrf_meta_tag
   %body
     #container
@@ -16,4 +16,4 @@
       #footer FOOTER
     %script{ :type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" }
     %script{ :type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" }
-    = javascript_include_tag :all
+    = raw javascript_include_merged(:base)
