@@ -23,7 +23,7 @@ gem 'spork', ">=0.8.4", :group => :cucumber
 gem "pickle", :git => "git://github.com/codegram/pickle.git", :group => :cucumber
 
 gem "newrelic_rpm", ">=2.12.3", :group => :production
-gem "hoptoad_notifier", '>=2.3.3', :group => :production
+gem "hoptoad_notifier", '>=2.3.3'
 
 gem 'inploy'
 
