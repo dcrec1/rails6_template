@@ -73,10 +73,10 @@ repository = ''
 hosts = %w() 
 DEPLOY
 
+run "chmod u+x build.sh"
+
 git :init
 git :add => '.'
 git :commit => '-am "Initial commit"'
-
-run "chmod u+x build.sh"
  
 puts "SUCCESS!"
