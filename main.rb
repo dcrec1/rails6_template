@@ -2,18 +2,18 @@ run "rm -Rf README public/index.html public/javascripts/* test app/views/layouts
 
 gem 'haml', '>=3.0.18'
 gem 'inherited_resources', '>=1.1.2'
-gem 'will_paginate', '>=3.0.pre'
-gem 'devise', '>=1.1.rc2'
+gem 'will_paginate', '>=3.0.pre2'
+gem 'devise', '>=1.1.2'
 gem "formtastic", :git => "git://github.com/justinfrench/formtastic.git", :branch => "rails3"
 gem 'friendly_id', '~>3.0'
-gem "compass", ">= 0.10.1"
+gem "compass", ">= 0.10.5"
 
-gem 'rspec', '>=2.0.0.alpha.11', :group => :test
-gem 'rspec-rails', '>=2.0.0.alpha.11', :group => :test
+gem 'rspec', '>=2.0.0.alpha.20', :group => :test
+gem 'rspec-rails', '>=2.0.0.alpha.20', :group => :test
 gem 'remarkable', '>=4.0.0.alpha4', :group => :test
 gem 'remarkable_activemodel', '>=4.0.0.alpha4', :group => :test
 gem 'remarkable_activerecord', '>=4.0.0.alpha4', :group => :test
-gem "factory_girl_rails" # BUG => , :group => :test
+gem "factory_girl_rails"
 
 gem 'cucumber', ">=0.6.3", :group => :cucumber
 gem 'cucumber-rails', ">=0.3.2", :group => :cucumber
@@ -23,9 +23,9 @@ gem 'spork', ">=0.8.4", :group => :cucumber
 gem "pickle", ">=0.4.2", :group => :cucumber
 
 gem "newrelic_rpm", ">=2.12.3", :group => :production
-gem "hoptoad_notifier", '>=2.3.3'
+gem "hoptoad_notifier", '>=2.3.6'
 
-gem 'inploy'
+gem 'inploy', '>=1.6.8'
 
 gem 'rails3-generators', :git => "git://github.com/indirect/rails3-generators.git"
 
