@@ -29,8 +29,6 @@ gem 'inploy'
 
 gem 'rails3-generators', :git => "git://github.com/indirect/rails3-generators.git"
 
-plugin 'asset_packager', :git => 'git://github.com/sbecker/asset_packager.git'
-
 application  <<-GENERATORS 
 config.generators do |g|
   g.template_engine :haml
@@ -40,6 +38,8 @@ end
 GENERATORS
 
 run "bundle install"
+plugin 'asset_packager', :git => 'git://github.com/sbecker/asset_packager.git'
+
 generate "rspec:install"
 generate "cucumber:install --capybara --rspec --spork"
 generate "pickle:skeleton --path --email"
