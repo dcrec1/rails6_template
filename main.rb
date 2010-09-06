@@ -8,8 +8,8 @@ gem "formtastic", :git => "git://github.com/justinfrench/formtastic.git", :branc
 gem 'friendly_id', '~>3.0'
 gem "compass", ">= 0.10.5"
 
-gem 'rspec', '>=2.0.0.alpha.20', :group => :test
-gem 'rspec-rails', '>=2.0.0.alpha.20', :group => :test
+gem 'rspec', '>=2.0.0.beta.20', :group => :test
+gem 'rspec-rails', '>=2.0.0.beta.20', :group => :test
 gem 'remarkable', '>=4.0.0.alpha4', :group => :test
 gem 'remarkable_activemodel', '>=4.0.0.alpha4', :group => :test
 gem 'remarkable_activerecord', '>=4.0.0.alpha4', :group => :test
@@ -37,6 +37,7 @@ application  <<-GENERATORS
 config.generators do |g|
   g.template_engine :haml
   g.test_framework  :rspec, :fixture => true, :views => false
+  g.integration_tool :rspec, :fixture => true, :views => true
   g.fixture_replacement :factory_girl, :dir => "spec/support/factories"
 end
 GENERATORS
