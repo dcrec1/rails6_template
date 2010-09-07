@@ -51,7 +51,7 @@ generate "devise:install"
 generate "devise User"
 generate "devise Admin"
 run "gem install compass"
-run "compass init --using blueprint --app rails --css-dir public/stylesheets"
+run "compass --rails -f blueprint --sass-dir app/stylesheets --css-dir public/stylesheets ."
 
 run "rm public/stylesheets/*"
 
