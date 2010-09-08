@@ -1,4 +1,4 @@
-run "rm -Rf README public/index.html public/javascripts/* test app/views/layouts/*"
+run "rm -Rf .gitignore README public/index.html public/javascripts/* test app/views/layouts/*"
 
 gem "haml-rails", ">= 0.2"
 gem 'inherited_resources', '>=1.1.2'
