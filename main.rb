@@ -44,7 +44,7 @@ GENERATORS
 
 generate "rspec:install"
 generate "cucumber:install --capybara --rspec --spork"
-generate "pickle:skeleton --path --email"
+generate "pickle --path --email"
 generate "friendly_id"
 generate "formtastic:install"
 generate "devise:install"
