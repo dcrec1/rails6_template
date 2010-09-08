@@ -1,6 +1,6 @@
 run "rm -Rf README public/index.html public/javascripts/* test app/views/layouts/*"
 
-gem 'haml', '>=3.0.18'
+gem "haml-rails", ">= 0.2"
 gem 'inherited_resources', '>=1.1.2'
 gem 'will_paginate', '>=3.0.pre2'
 gem 'devise', '>=1.1.2'
@@ -9,7 +9,7 @@ gem 'friendly_id', '~>3.0'
 gem "compass", ">= 0.10.5"
 
 gem 'rspec', '>=2.0.0.beta.20', :group => :test
-gem 'rspec-rails', '>=2.0.0.beta.20', :group => :test
+gem 'rspec-rails', '>=2.0.0.beta.20', :group => [:development, :test]
 gem 'remarkable', '>=4.0.0.alpha4', :group => :test
 gem 'remarkable_activemodel', '>=4.0.0.alpha4', :group => :test
 gem 'remarkable_activerecord', '>=4.0.0.alpha4', :group => :test
