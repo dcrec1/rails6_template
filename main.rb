@@ -8,6 +8,8 @@ gem "formtastic", '>=1.1.0'
 gem 'friendly_id', '~>3.0'
 gem "compass", ">= 0.10.5"
 
+gem "metric_fu", ">=1.5.1", :group => :development
+
 gem 'rspec', '>=2.0.0.beta.20', :group => :test
 gem 'rspec-rails', '>=2.0.0.beta.20', :group => [:development, :test]
 gem 'remarkable', '>=4.0.0.alpha4', :group => :test
@@ -76,6 +78,12 @@ application = '#{app_name}'
 repository = ''
 hosts = %w() 
 DEPLOY
+
+append_file 'Rakefile', <<-METRIC_FU
+MetricFu::Configuration.run do |config|  
+  config.rcov[:rcov_opts] << "-Ispec"  
+end
+METRIC_FU
 
 run "chmod u+x build.sh"
 
