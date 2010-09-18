@@ -80,9 +80,10 @@ hosts = %w()
 DEPLOY
 
 append_file 'Rakefile', <<-METRIC_FU
+
 MetricFu::Configuration.run do |config|  
   config.rcov[:rcov_opts] << "-Ispec"  
-end
+end rescue nil
 METRIC_FU
 
 run "chmod u+x build.sh"
