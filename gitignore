@@ -19,3 +19,6 @@ db/schema.rb
 specifications
 cache
 gems
+spec/requests
+spec/routing
+spec/views
