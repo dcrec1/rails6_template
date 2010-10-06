@@ -10,8 +10,8 @@ gem "compass", ">= 0.10.5"
 
 gem "metric_fu", ">=1.5.1", :group => :development
 
-gem 'rspec', '>=2.0.0.beta.20', :group => :test
-gem 'rspec-rails', '>=2.0.0.beta.20', :group => [:development, :test]
+gem 'rspec', '>=2.0.0.rc', :group => :test
+gem 'rspec-rails', '>=2.0.0.rc', :group => [:development, :test]
 gem 'remarkable', '>=4.0.0.alpha4', :group => :test
 gem 'remarkable_activemodel', '>=4.0.0.alpha4', :group => :test
 gem 'remarkable_activerecord', '>=4.0.0.alpha4', :group => :test
