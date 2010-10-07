@@ -75,7 +75,6 @@ get "http://github.com/dcrec1/rails3_template/raw/master/htaccess", "public/.hta
 get "http://github.com/dcrec1/rails3_template/raw/master/asset_packages.yml", "config/asset_packages.yml"
 
 create_file 'config/deploy.rb', <<-DEPLOY
-template = 'rails3'
 application = '#{app_name}'
 repository = ''
 hosts = %w() 
