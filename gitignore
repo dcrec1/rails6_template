@@ -11,11 +11,14 @@ public/javascripts/*_packaged.js
 doc/specs.html
 doc/features.html
 tags
-*.swp
-*.swo
+*.sw?
+*~
 rerun.txt
 .bundle
 db/schema.rb
 specifications
 cache
 gems
+spec/requests
+spec/routing
+spec/views
