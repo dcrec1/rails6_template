@@ -25,9 +25,7 @@ gem 'spork', ">=0.8.4", :group => :cucumber
 gem "pickle", ">=0.4.2", :group => :cucumber
 
 gem "newrelic_rpm", ">=2.12.3", :group => :production
-gem "hoptoad_notifier", '>=2.3.6'
-
-gem 'inploy', '>=1.6.8'
+gem "exceptional", '>=2.0.0'
 
 gem 'rails3-generators', :git => "git://github.com/indirect/rails3-generators.git"
 
@@ -70,15 +68,8 @@ get "http://github.com/dcrec1/rails3_template/raw/master/build.rake", "lib/tasks
 get "http://github.com/dcrec1/rails3_template/raw/master/build.sh", "build.sh"
 get "http://github.com/dcrec1/rails3_template/raw/master/overlay.png", "public/images/overlay.png"
 get "http://github.com/dcrec1/rails3_template/raw/master/newrelic.yml", "config/newrelic.yml"
-get "http://github.com/dcrec1/rails3_template/raw/master/hoptoad.rb", "config/initializers/hoptoad.rb"
 get "http://github.com/dcrec1/rails3_template/raw/master/htaccess", "public/.htaccess"
 get "http://github.com/dcrec1/rails3_template/raw/master/asset_packages.yml", "config/asset_packages.yml"
-
-create_file 'config/deploy.rb', <<-DEPLOY
-application = '#{app_name}'
-repository = ''
-hosts = %w() 
-DEPLOY
 
 append_file 'Rakefile', <<-METRIC_FU
 
