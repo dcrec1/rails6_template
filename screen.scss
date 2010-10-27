@@ -28,7 +28,7 @@ body {
     @include container;
   }
 
-  #header, #footer {
+  header, footer {
     @include column($blueprint-grid-columns, true);
   }
 
