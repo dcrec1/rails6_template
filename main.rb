@@ -1,37 +1,50 @@
+file_string = "#{ENV["HOME"]}/.rails3_template.yml" 
+if File.exists?(file_string)
+  require 'yaml'
+  config = YAML.load_file(file_string)
+else
+  config = {}
+end
+
 run "rm -Rf .gitignore README public/index.html public/javascripts/* test app/views/layouts/*"
 
-gem "haml-rails", ">= 0.2"
-gem 'inherited_resources', '>=1.1.2'
-gem 'will_paginate', '>=3.0.pre2'
-gem 'devise', '>=1.1.2'
-gem "formtastic", '>=1.1.0'
-gem 'friendly_id', '~>3.0'
-gem "compass", ">= 0.10.5"
+gem "haml-rails", ">= 0.2" unless config[:no_haml]
+gem 'inherited_resources', '>=1.1.2' unless config[:no_inherited_resource]
+gem 'will_paginate', '>=3.0.pre2' unless config[:no_paginate]
+gem 'devise', '>=1.1.2' unless config[:no_devise]
+gem "formtastic", '>=1.1.0' unless config[:no_formtastic]
+gem 'friendly_id', '~>3.0' unless config[:no_friendly_id]
+gem "compass", ">= 0.10.5" unless config[:no_compass]
 
 gem "metric_fu", ">=1.5.1", :group => :development
 
-gem 'rspec', '>=2.0.0.rc', :group => :test
-gem 'rspec-rails', '>=2.0.0.rc', :group => [:development, :test]
-gem 'remarkable', '>=4.0.0.alpha4', :group => :test
-gem 'remarkable_activemodel', '>=4.0.0.alpha4', :group => :test
-gem 'remarkable_activerecord', '>=4.0.0.alpha4', :group => :test
-gem "factory_girl_rails"
+unless config[:no_rspec]
+  gem 'rspec', '>=2.0.0.rc', :group => :test
+  gem 'rspec-rails', '>=2.0.0.rc', :group => [:development, :test]
+  gem 'remarkable', '>=4.0.0.alpha4', :group => :test
+  gem 'remarkable_activemodel', '>=4.0.0.alpha4', :group => :test
+  gem 'remarkable_activerecord', '>=4.0.0.alpha4', :group => :test
+  gem "factory_girl_rails"
+end
 
-gem 'cucumber', ">=0.6.3", :group => :cucumber
-gem 'cucumber-rails', ">=0.3.2", :group => :cucumber
-gem 'capybara', ">=0.3.6", :group => :cucumber
-gem 'database_cleaner', ">=0.5.0", :group => :cucumber
-gem 'spork', ">=0.8.4", :group => :cucumber
-gem "pickle", ">=0.4.2", :group => :cucumber
+unless config[:no_cucumber]
+  gem 'cucumber', ">=0.6.3", :group => :cucumber
+  gem 'cucumber-rails', ">=0.3.2", :group => :cucumber
+  gem 'capybara', ">=0.3.6", :group => :cucumber
+  gem 'database_cleaner', ">=0.5.0", :group => :cucumber
+  gem 'spork', ">=0.8.4", :group => :cucumber
+  gem "pickle", ">=0.4.2", :group => :cucumber
+end
 
-gem "newrelic_rpm", ">=2.12.3", :group => :production
-gem "exceptional", '>=2.0.0'
+gem "newrelic_rpm", ">=2.12.3", :group => :production unless config[:no_rpm]
+gem "hoptoad_notifier", '>=2.3.6' unless config[:no_hoptoad]
+gem "exceptional", '>=2.0.0' unless config[:no_exceptional]
 
-gem 'rails3-generators', :git => "git://github.com/indirect/rails3-generators.git"
+gem 'rails3-generators', :git => "git://github.com/indirect/rails3-generators.git" unless config[:no_generators]
 
 run "bundle install"
 
-plugin 'asset_packager', :git => 'git://github.com/sbecker/asset_packager.git'
+plugin 'asset_packager', :git => 'git://github.com/sbecker/asset_packager.git' unless config[:no_asset_packager]
 
 application  <<-GENERATORS 
 config.generators do |g|
@@ -42,16 +55,16 @@ config.generators do |g|
 end
 GENERATORS
 
-generate "rspec:install"
-generate "cucumber:install --capybara --rspec --spork"
-generate "pickle --path --email"
-generate "friendly_id"
-generate "formtastic:install"
-generate "devise:install"
-generate "devise User"
-generate "devise Admin"
-run "gem install compass"
-run "compass init --using blueprint --app rails --css-dir public/stylesheets"
+generate "rspec:install" unless config[:no_rspec]
+generate "cucumber:install --capybara --rspec --spork" unless config[:no_cucumber]
+generate "pickle --path --email" unless config[:no_cucumber]
+generate "friendly_id" unless config[:no_friendly_id]
+generate "formtastic:install" unless config[:no_formtastic]
+generate "devise:install" unless config[:no_devise]
+generate "devise User" unless config[:no_devise]
+generate "devise Admin" unless config[:no_devise]
+run "gem install compass" unless config[:no_compass]
+run "compass init --using blueprint --app rails --css-dir public/stylesheets" unless config[:no_compass]
 
 run "rm public/stylesheets/*"
 
