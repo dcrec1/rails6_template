@@ -1,1 +1,19 @@
+h2. Usage
 <pre><code>rails new app_name -T -m http://github.com/dcrec1/rails3_template/raw/master/main.rb</code></pre>
+
+h2. Configuration
+You can turn off various features by adding the option no_WHATEVER to the ~/.rails3_template.yml file, where WHATEVER is haml, rspec, inherited_resource, etc.
+<pre><code>
+  no_inherited_resource: true
+  no_exceptional: true
+</code></pre>
+
+Note: to provent conflicts this defaults to no_exceptional and no_capistrano
+
+You can also set your root project url to pull templates down from
+<pre><code>
+  root_url: "http://github.com/notch8/rails3_template/raw/master"
+</code></pre>
+
+Note: this defaults to "http://github.com/dcrec1/rails3_template/raw/master"
+
