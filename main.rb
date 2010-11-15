@@ -21,8 +21,8 @@ gem "compass", ">= 0.10.5" unless config["no_compass"]
 gem "metric_fu", ">=1.5.1", :group => :development
 
 unless config["no_rspec"]
-  gem 'rspec', '>=2.0.0.rc', :group => :test
-  gem 'rspec-rails', '>=2.0.0.rc', :group => [:development, :test]
+  gem 'rspec', '>=2.0.1', :group => :test
+  gem 'rspec-rails', '>=2.0.1', :group => [:development, :test]
   gem 'remarkable', '>=4.0.0.alpha4', :group => :test
   gem 'remarkable_activemodel', '>=4.0.0.alpha4', :group => :test
   gem 'remarkable_activerecord', '>=4.0.0.alpha4', :group => :test
@@ -75,21 +75,30 @@ run "compass init --using blueprint --app rails --css-dir public/stylesheets" un
 run "rm public/stylesheets/*"
 
 get "http://github.com/rails/jquery-ujs/raw/master/src/rails.js", "public/javascripts/rails.js"
-get "#{config['root_url']}/gitignore" ,".gitignore" 
-get "#{config['root_url']}/screen.scss", "app/stylesheets/screen.scss"
-get "#{config['root_url']}/print.scss", "app/stylesheets/print.scss"
-get "#{config['root_url']}/application.html.haml", "app/views/layouts/application.html.haml"
-get "#{config['root_url']}/factory_girl.rb", "features/support/factory_girl.rb"
-get "#{config['root_url']}/devise_steps.rb", "features/step_definitions/devise_steps.rb"
-get "#{config['root_url']}/remarkable.rb", "spec/support/remarkable.rb"
-get "#{config['root_url']}/users.rb", "spec/support/factories/users.rb"
-get "#{config['root_url']}/build.rake", "lib/tasks/build.rake"
-get "#{config['root_url']}/build.sh", "build.sh"
-get "#{config['root_url']}/overlay.png", "public/images/overlay.png"
-get "#{config['root_url']}/newrelic.yml", "config/newrelic.yml"
-get "#{config['root_url']}/htaccess", "public/.htaccess"
-get "#{config['root_url']}/asset_packages.yml", "config/asset_packages.yml"
+get "#{config['root_url']}/rails3_template/raw/master/gitignore" ,".gitignore" 
+get "#{config['root_url']}/rails3_template/raw/master/screen.scss", "app/stylesheets/screen.scss"
+get "#{config['root_url']}/rails3_template/raw/master/print.scss", "app/stylesheets/print.scss"
+get "#{config['root_url']}/rails3_template/raw/master/application.html.haml", "app/views/layouts/application.html.haml"
+get "#{config['root_url']}/rails3_template/raw/master/factory_girl.rb", "features/support/factory_girl.rb"
+get "#{config['root_url']}/rails3_template/raw/master/devise_steps.rb", "features/step_definitions/devise_steps.rb"
+get "#{config['root_url']}/rails3_template/raw/master/remarkable.rb", "spec/support/remarkable.rb"
+get "#{config['root_url']}/rails3_template/raw/master/users.rb", "spec/support/factories/users.rb"
+get "#{config['root_url']}/rails3_template/raw/master/build.rake", "lib/tasks/build.rake"
+get "#{config['root_url']}/rails3_template/raw/master/build.sh", "build.sh"
+get "#{config['root_url']}/rails3_template/raw/master/overlay.png", "public/images/overlay.png"
+get "#{config['root_url']}/rails3_template/raw/master/newrelic.yml", "config/newrelic.yml"
+get "#{config['root_url']}/rails3_template/raw/master/hoptoad.rb", "config/initializers/hoptoad.rb"
+get "#{config['root_url']}/rails3_template/raw/master/htaccess", "public/.htaccess"
+get "#{config['root_url']}/rails3_template/raw/master/asset_packages.yml", "config/asset_packages.yml"
+get "#{config['root_url']}/rails3_template/raw/master/grid.png", "public/images/grid.png"
 
+unless config[:no_inploy]
+  create_file 'config/deploy.rb', <<-DEPLOY
+  application = '#{app_name}'
+  repository = ''
+  hosts = %w() 
+DEPLOY
+end
 append_file 'Rakefile', <<-METRIC_FU
 
 MetricFu::Configuration.run do |config|  
