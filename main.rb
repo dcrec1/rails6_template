@@ -57,7 +57,7 @@ run "compass init --using blueprint --app rails --css-dir public/stylesheets"
 
 run "rm public/stylesheets/*"
 
-get "https://github.com/rails/jquery-ujs/raw/master/src/rails.js", "public/javascripts/rails.js"
+get "http://github.com/rails/jquery-ujs/raw/master/src/rails.js", "public/javascripts/rails.js"
 get "https://github.com/dcrec1/rails3_template/raw/master/gitignore" ,".gitignore" 
 get "https://github.com/dcrec1/rails3_template/raw/master/screen.scss", "app/stylesheets/screen.scss"
 get "https://github.com/dcrec1/rails3_template/raw/master/print.scss", "app/stylesheets/print.scss"
