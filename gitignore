@@ -22,3 +22,4 @@ gems
 spec/requests
 spec/routing
 spec/views
+capybara*
