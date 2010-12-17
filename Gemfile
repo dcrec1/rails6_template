@@ -11,6 +11,7 @@ gem "devise", ">=1.1.2"
 gem "formtastic", ">=1.1.0"
 gem "friendly_id", "~>3.0"
 gem "compass", ">= 0.10.5"
+gem "lemonade", "0.3.4"
 gem "hoptoad_notifier", ">=2.3.6"
 gem "inploy", ">=1.6.8"
 
