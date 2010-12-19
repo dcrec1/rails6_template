@@ -1,12 +1,12 @@
 run "rm -Rf .gitignore README public/index.html public/javascripts/* test app/views/layouts/*"
 
-get "http://github.com/rails/jquery-ujs/raw/master/src/Gemfile", "Gemfile"
+run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/Gemfile' -O Gemfile"
 
 run "bundle install"
 
 plugin 'asset_packager', :git => 'git://github.com/sbecker/asset_packager.git'
 
-application  <<-GENERATORS 
+application  <<-GENERATORS
 config.generators do |g|
   g.template_engine :haml
   g.test_framework  :rspec, :fixture => true, :views => false
@@ -29,7 +29,7 @@ run "compass init --using blueprint --app rails --css-dir public/stylesheets"
 run "rm public/stylesheets/*"
 
 run "wget --no-check-certificate 'https://github.com/rails/jquery-ujs/raw/master/src/rails.js' -O public/javascripts/rails.js"
-run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/gitignore' -O .gitignore" 
+run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/gitignore' -O .gitignore"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/screen.scss' -O app/stylesheets/screen.scss"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/print.scss' -O app/stylesheets/print.scss"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/application.html.haml' -O app/views/layouts/application.html.haml"
@@ -49,13 +49,13 @@ run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/
 create_file 'config/deploy.rb', <<-DEPLOY
 application = '#{app_name}'
 repository = ''
-hosts = %w() 
+hosts = %w()
 DEPLOY
 
 append_file 'Rakefile', <<-METRIC_FU
 
-MetricFu::Configuration.run do |config|  
-  config.rcov[:rcov_opts] << "-Ispec"  
+MetricFu::Configuration.run do |config|
+  config.rcov[:rcov_opts] << "-Ispec"
 end rescue nil
 METRIC_FU
 
@@ -64,5 +64,5 @@ run "chmod u+x build.sh"
 git :init
 git :add => '.'
 git :commit => '-am "Initial commit"'
- 
+
 puts "SUCCESS!"
