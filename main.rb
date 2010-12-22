@@ -24,6 +24,7 @@ generate "devise:install"
 generate "devise User"
 generate "devise Admin"
 generate "rails_admin:install_admin"
+generate "barista:install"
 run "gem install compass"
 run "compass init --using blueprint --app rails --css-dir public/stylesheets"
 
