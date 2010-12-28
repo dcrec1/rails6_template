@@ -47,6 +47,7 @@ run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/rails_admin.rb' -O config/initializers/rails_admin.rb"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/htaccess' -O public/.htaccess"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/asset_packages.yml' -O config/asset_packages.yml"
+run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/evergreen.rb' -O config/evergreen.rb"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/grid.png' -O public/images/grid.png"
 
 create_file 'config/deploy.rb', <<-DEPLOY
@@ -62,10 +63,12 @@ MetricFu::Configuration.run do |config|
 end rescue nil
 METRIC_FU
 
+run "mkdir -p app/coffeescripts spec/javascripts spec/javascripts/templates"
 run "chmod u+x build.sh"
 
 git :init
 git :add => '.'
+git :add => 'public/javascripts/rails.js --force'
 git :commit => '-am "Initial commit"'
 
 puts "SUCCESS!"

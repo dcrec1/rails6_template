@@ -28,6 +28,7 @@ group :development, :test do
   gem "evergreen"
   gem "factory_girl_rails"
   gem "rspec-rails", ">=2.0.1"
+  gem "evergreen", :require => "evergreen/rails"
 end
 
 group :test do
@@ -35,6 +36,7 @@ group :test do
   gem "remarkable", ">=4.0.0.alpha4"
   gem "remarkable_activemodel", ">=4.0.0.alpha4"
   gem "remarkable_activerecord", ">=4.0.0.alpha4"
+  gem "capybara-envjs"
 end
 
 group :cucumber do
