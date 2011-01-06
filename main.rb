@@ -40,6 +40,7 @@ run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/remarkable.rb' -O spec/support/remarkable.rb"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/users.rb' -O spec/support/factories/users.rb"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/build.rake' -O lib/tasks/build.rake"
+run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/bootstrap.rake' -O lib/tasks/bootstrap.rake"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/build.sh' -O build.sh"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/overlay.png' -O public/images/overlay.png"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/newrelic.yml' -O config/newrelic.yml"
