@@ -4,7 +4,7 @@ gem 'rails', '3.0.3'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-gem "rails_admin", :git => 'git://github.com/sferik/rails_admin.git'
+gem "rails_admin", :git => 'https://github.com/sferik/rails_admin.git'
 gem "haml-rails", ">= 0.2"
 gem "inherited_resources", ">=1.1.2"
 gem "will_paginate", ">=3.0.pre2"
@@ -20,7 +20,7 @@ gem "inploy", ">=1.6.8"
 group :development do
   gem "autotest"
   gem "autotest-notification"
-  gem "rails3-generators", :git => "git://github.com/indirect/rails3-generators.git"
+  gem "rails3-generators", :git => "https://github.com/indirect/rails3-generators.git"
   gem "metric_fu", ">=1.5.1"
 end
 
@@ -29,6 +29,12 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "rspec-rails", ">=2.0.1"
   gem "evergreen", :require => "evergreen/rails"
+  platforms :mri_18 do
+    gem "ruby-debug"
+  end
+  platforms :mri_19 do
+    gem "ruby-debug19", :require => 'ruby-debug'
+  end
 end
 
 group :test do
