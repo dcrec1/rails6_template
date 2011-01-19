@@ -27,6 +27,7 @@ generate "rails_admin:install_admin"
 generate "barista:install"
 run "gem install compass"
 run "compass init --using blueprint --app rails --css-dir public/stylesheets"
+append_file "config/compass.rb", "require 'lemonade'"
 
 run "rm public/stylesheets/*"
 
