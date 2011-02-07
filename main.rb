@@ -65,6 +65,11 @@ MetricFu::Configuration.run do |config|
 end rescue nil
 METRIC_FU
 
+append_file 'config/environment.rb', <<-ASSET_PACKAGER
+
+  Synthesis::AssetPackage.merge_environments = %w(staging production)
+ASSET_PACKAGER
+
 run "mkdir -p app/coffeescripts spec/javascripts spec/javascripts/templates"
 run "chmod u+x build.sh"
 
