@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head>
+    <title>TITLE</title>
+    <%= raw stylesheet_link_merged('screen', :media => 'screen, projection') %>
+    <%= raw stylesheet_link_merged('simple_form', :media => 'screen, projection') %>
+    <%= raw stylesheet_link_merged('print', :media => 'print') %>
+    <!--[if lt IE 9]>
+    <%= javascript_include_tag 'html5' %> 
+    <%= raw stylesheet_link_merged('ie', :media => 'screen, projection') %>
+    <![endif]-->
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <div id="container">
+      <header>HEADER</header>
+      <sidebar>SIDEBAR</sidebar>
+      <section id="content">
+        <% content_for :notice do %><p class="notice"><%= notice %></p><% end %>
+        <% content_for :alert do %><p class="alert"><%= alert %></p><% end %>
+        <%= yield %>
+      </section>
+      <footer>FOOTER</footer>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+    <%= raw javascript_include_merged(:base) %>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-Read the "Gemfile":blob/master/Gemfile to understand everything this template installs and pre-configures for you.
+Read the "Gemfile":blob/master/files/Gemfile to understand everything this template installs and pre-configures for you.
 
 One of gems, "Johnson":http://rubygems.org/gems/johnson, still has some issues compiling under Ruby 1.9.2 so you will need to use Ruby 1.8.7 instead.
 
@@ -8,10 +8,51 @@ This template is heavily dependent on wget so, if you're using a Mac, you will n
 
 Since Github started forcing SSL in all its URLs, we need to download the template file separately:
 
-<pre><code>wget --no-check-certificate https://github.com/dcrec1/rails3_template/raw/master/main.rb -O /tmp/rails3_template.rb</pre></code>
+<pre><code>wget --no-check-certificate https://github.com/akitaonrails/rails3_template/raw/master/main.rb -O /tmp/rails3_template.rb</pre></code>
 
 Then whenever you want to create a new project, just do:
 
-<pre><code>rails new app_name -T -m /tmp/rails3_template.rb</code></pre>
+<pre><code>rails new app_name -JT -m /tmp/rails3_template.rb</code></pre>
 
 Change <tt>app_name</tt> for your project name. You can configure what you need and run <tt>rake db:migrate</tt> to get started.
+
+h2. CRITERIA
+
+This is intended to be an opinionated template. The options chosen have these reasons:
+
+* Standard ERB instead of HAML - even though HAML is great the pros and cons are too balanced to justify replacing ERB.
+* Simple Form instead of Formtastic - to me, "feels" simpler
+* SASS instead of pure CSS - this undeniably adds value on top of CSS making it easier to organize
+* JQuery instead of Prototype - no need to say more
+* Kaminari instead of Will Paginate - cleaner solution for pagination
+* Pure Javascript instead of CoffeeScript - as HAML, the syntax gets more elegant, but there is no inherent advantages
+* RSpec, Factory Girl Cucumber, Spork, Capybara, Celerity, Faker, Metric Fu - this is the universally accepted main test package, so be it
+* Evergreen - testing Javascript is great and this seems to be the best so far
+* Devise - the best authentication system so far
+* Inherited Resources - lighter controllers
+* Compass, Asset Packager, Lemonade - easier way to deal with images and other assets
+* Cells - this is experimental but does bring advantages in making controller less cluttered and isolating components
+
+So, opinionated to a point, trying to stick to the basics where advantages are not so obvious.
+
+h2. TESTING 
+
+Read Peter Cooper's "excellent tutorial":http://www.rubyinside.com/how-to-rails-3-and-rspec-2-4336.html on how to setup a fast testing environment: 
+
+This template tries to do so. Before starting just run:
+
+<pre><code>spork</code></pre>
+
+And in another terminal run:
+
+<pre><code>rake watchr</code></pre>
+
+Also do not forget to modify <tt>config/environments/test.rb</tt> to reload classes:
+
+<pre><code>config.cache_classes = false</code></pre>
+
+h2. CREDITS
+
+This Template is based on "Diego Carrion's template":https://github.com/dcrec1/rails3_template. The changes include removing HAML, Hoptoad, Coffeescript (Barista), Remarkable, adding yajl for json, thin, replacing will_paginate for kaminari, replacing autotest for watchr, enabling spork, replacing formtastic for simple_form, bundling gems within the app, 
+
+Author: Fabio Akita (@AkitaOnRails)

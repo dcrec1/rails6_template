@@ -1,0 +1,56 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.0.4'
+
+gem 'sqlite3-ruby', :require => 'sqlite3'
+
+gem "rails_admin", :git => 'https://github.com/sferik/rails_admin.git'
+gem "inherited_resources"
+gem "kaminari"
+gem "devise"
+gem "simple_form"
+gem "friendly_id"
+gem "compass"
+gem "lemonade"
+gem "cells"
+gem 'yajl-ruby', :require => 'yajl/json_gem'
+
+group :development do
+  gem "watchr"
+  gem "rails3-generators", :git => "https://github.com/indirect/rails3-generators.git"
+  gem "metric_fu"
+end
+
+group :development, :test do
+  gem "spork"
+  gem "thin"
+  gem "evergreen"
+  gem "factory_girl_rails"
+  gem "rspec-rails"
+  gem "faker"
+  gem "evergreen", :require => "evergreen/rails"
+  platforms :mri_18 do
+    gem "ruby-debug"
+  end
+  platforms :mri_19 do
+    gem "ruby-debug19", :require => 'ruby-debug'
+  end
+end
+
+group :test do
+  gem "rspec"
+  gem "capybara-envjs"
+end
+
+group :cucumber do
+  gem "cucumber"
+  gem "cucumber-rails"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "spork"
+  gem "pickle"
+end
+
+group :production do
+  gem "newrelic_rpm"
+end
