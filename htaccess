@@ -12,4 +12,8 @@
   ExpiresDefault "access plus 1 year"
 </ifModule>
 
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/x-javascript
+</IfModule>
+
 FileETag None

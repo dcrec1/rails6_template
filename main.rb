@@ -27,6 +27,7 @@ generate "rails_admin:install_admin"
 generate "barista:install"
 run "gem install compass"
 run "compass init --using blueprint --app rails --css-dir public/stylesheets"
+append_file "config/compass.rb", "require 'lemonade'"
 
 run "rm public/stylesheets/*"
 
@@ -63,6 +64,11 @@ MetricFu::Configuration.run do |config|
   config.rcov[:rcov_opts] << "-Ispec"
 end rescue nil
 METRIC_FU
+
+append_file 'config/environment.rb', <<-ASSET_PACKAGER
+
+  Synthesis::AssetPackage.merge_environments = %w(staging production)
+ASSET_PACKAGER
 
 run "mkdir -p app/coffeescripts spec/javascripts spec/javascripts/templates"
 run "chmod u+x build.sh"
