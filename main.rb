@@ -64,8 +64,8 @@ run "wget --no-check-certificate '#{BASE_URI}/watchr.rb' -O .watchr"
 run "wget --no-check-certificate '#{BASE_URI}/watchr.rake' -O lib/tasks/watchr.rake"
 run "wget --no-check-certificate '#{I18N_BASE_URI}/en-US.yml' -O config/locales/en.yml"
 run "wget --no-check-certificate '#{I18N_BASE_URI}/pt-BR.yml' -O config/locales/pt-BR.yml"
-run "wget http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js public/javascripts/jquery.js"
-run "wget http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js public/javascripts/jquery-ui.js"
+run "wget http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js -O public/javascripts/jquery.js"
+run "wget http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js -O public/javascripts/jquery-ui.js"
 
 run "chmod u+x build.sh"
 
