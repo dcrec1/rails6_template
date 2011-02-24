@@ -27,6 +27,7 @@ group :development, :test do
   gem "evergreen"
   gem "factory_girl_rails"
   gem "rspec-rails"
+  gem "rspec-cells"
   gem "faker"
   gem "evergreen", :require => "evergreen/rails"
   platforms :mri_18 do
