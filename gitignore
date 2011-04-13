@@ -13,6 +13,7 @@ doc/features.html
 tags
 *.sw?
 *~
+*.orig
 rerun.txt
 .bundle
 db/schema.rb
