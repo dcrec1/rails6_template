@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
 
-
 gem "rails_admin", :git => 'git://github.com/sferik/rails_admin.git'
 gem "haml-rails", ">= 0.2"
 gem "inherited_resources", ">=1.1.2"
@@ -47,8 +46,4 @@ group :cucumber do
   gem "database_cleaner", ">=0.5.0"
   gem "spork", ">=0.8.4"
   gem "pickle", ">=0.4.2"
-end
-
-group :production do
-  gem "newrelic_rpm", ">=2.12.3"
 end
