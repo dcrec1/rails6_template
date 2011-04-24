@@ -49,6 +49,7 @@ run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/asset_packages.yml' -O config/asset_packages.yml"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/evergreen.rb' -O config/evergreen.rb"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/grid.png' -O public/images/grid.png"
+run "wget --no-check-certificate 'https://github.com/emersonvinicius/rails3_template/raw/master/README_for_app.md' -O README.md"
 
 create_file 'config/deploy.rb', <<-DEPLOY
 application = '#{app_name}'
