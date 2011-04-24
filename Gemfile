@@ -14,7 +14,6 @@ gem "friendly_id", "~>3.0"
 gem "compass", ">= 0.10.6"
 gem "lemonade", "0.3.4"
 gem "barista", ">= 0.5.0"
-gem "hoptoad_notifier", ">=2.3.6"
 gem "inploy", ">=1.6.8"
 gem "json"
 
