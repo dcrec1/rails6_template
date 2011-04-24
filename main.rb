@@ -70,7 +70,8 @@ append_file 'config/environment.rb', <<-ASSET_PACKAGER
   Synthesis::AssetPackage.merge_environments = %w(staging production)
 ASSET_PACKAGER
 
-run "mkdir -p app/coffeescripts spec/javascripts spec/javascripts/templates"
+run "mkdir -p app/coffeescripts spec/javascripts spec/javascripts/templates tmp"
+run "touch tmp/.gitkeep"
 run "chmod u+x build.sh"
 
 git :init
