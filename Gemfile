@@ -23,7 +23,6 @@ group :development do
 end
 
 group :development, :test do
-  gem "evergreen"
   gem "factory_girl_rails"
   gem "rspec-rails", ">=2.0.1"
   gem "evergreen", :require => "evergreen/rails"
