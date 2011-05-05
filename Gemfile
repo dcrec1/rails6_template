@@ -1,8 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.6'
-
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'rails', '3.0.7'
 
 gem "rails_admin", :git => 'git://github.com/sferik/rails_admin.git'
 gem "haml-rails", ">= 0.2"
@@ -14,7 +12,6 @@ gem "friendly_id", "~>3.0"
 gem "compass", ">= 0.10.6"
 gem "lemonade", "0.3.4"
 gem "barista", ">= 0.5.0"
-gem "hoptoad_notifier", ">=2.3.6"
 gem "inploy", ">=1.6.8"
 gem "json"
 
@@ -29,12 +26,8 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "rspec-rails", ">=2.0.1"
   gem "evergreen", :require => "evergreen/rails"
-  platforms :mri_18 do
-    gem "ruby-debug"
-  end
-  platforms :mri_19 do
-    gem "ruby-debug19", :require => 'ruby-debug'
-  end
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem "ruby-debug"
 end
 
 group :test do
@@ -52,8 +45,4 @@ group :cucumber do
   gem "database_cleaner", ">=0.5.0"
   gem "spork", ">=0.8.4"
   gem "pickle", ">=0.4.2"
-end
-
-group :production do
-  gem "newrelic_rpm", ">=2.12.3"
 end

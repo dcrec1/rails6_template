@@ -44,13 +44,12 @@ run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/bootstrap.rake' -O lib/tasks/bootstrap.rake"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/build.sh' -O build.sh"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/overlay.png' -O public/images/overlay.png"
-run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/newrelic.yml' -O config/newrelic.yml"
-run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/hoptoad.rb' -O config/initializers/hoptoad.rb"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/rails_admin.rb' -O config/initializers/rails_admin.rb"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/htaccess' -O public/.htaccess"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/asset_packages.yml' -O config/asset_packages.yml"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/evergreen.rb' -O config/evergreen.rb"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/grid.png' -O public/images/grid.png"
+run "wget --no-check-certificate 'https://github.com/emersonvinicius/rails3_template/raw/master/README_for_app.md' -O README.md"
 
 create_file 'config/deploy.rb', <<-DEPLOY
 application = '#{app_name}'
