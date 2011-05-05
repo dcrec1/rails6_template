@@ -50,6 +50,8 @@ run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/evergreen.rb' -O config/evergreen.rb"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/master/grid.png' -O public/images/grid.png"
 run "wget --no-check-certificate 'https://github.com/emersonvinicius/rails3_template/raw/master/README_for_app.md' -O README.md"
+run "wget 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js' -O public/javascripts/jquery.js"
+run "wget 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js' -O public/javascripts/jquery.ui.min.js"
 
 create_file 'config/deploy.rb', <<-DEPLOY
 application = '#{app_name}'
@@ -75,7 +77,7 @@ run "chmod u+x build.sh"
 
 git :init
 git :add => '.'
-git :add => 'public/javascripts/rails.js --force'
+git :add => 'public/javascripts/rails.js public/javascripts/jquery.js public/javascripts/jquery.ui.min.js --force'
 git :commit => '-am "Initial commit"'
 
 puts "SUCCESS!"
