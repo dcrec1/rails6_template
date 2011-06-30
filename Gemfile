@@ -1,22 +1,21 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.1.0.rc4'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sqlite3'
 
-gem "rails_admin", :git => 'git://github.com/sferik/rails_admin.git'
-gem "haml-rails", ">= 0.2"
-gem "inherited_resources", ">=1.1.2"
-gem "will_paginate", ">=3.0.pre2"
-gem "devise", ">=1.1.2"
-gem "formtastic", ">=1.1.0"
-gem "friendly_id", "~>3.0"
-gem "compass", ">= 0.10.6"
-gem "lemonade", "0.3.4"
-gem "barista", ">= 0.5.0"
-gem "hoptoad_notifier", ">=2.3.6"
-gem "inploy", ">=1.6.8"
-gem "json"
+gem "haml-rails"
+gem "inherited_resources"
+gem "devise"
+gem "formtastic"
+gem "friendly_id"
+gem "compass"
+gem "hoptoad_notifier"
+gem "inploy"
+gem 'sass-rails', "~> 3.1.0.rc"
+gem 'coffee-script'
+gem 'uglifier'
+gem 'jquery-rails'
 
 group :development do
   gem "autotest"
@@ -28,7 +27,7 @@ end
 group :development, :test do
   gem "factory_girl_rails"
   gem "rspec-rails", ">=2.0.1"
-  gem "evergreen", :require => "evergreen/rails"
+  gem 'evergreen', :require => 'evergreen/rails'
   platforms :mri_18 do
     gem "ruby-debug"
   end
@@ -42,7 +41,7 @@ group :test do
   gem "remarkable", ">=4.0.0.alpha4"
   gem "remarkable_activemodel", ">=4.0.0.alpha4"
   gem "remarkable_activerecord", ">=4.0.0.alpha4"
-  gem "capybara-envjs"
+  gem 'turn', :require => false
 end
 
 group :cucumber do
