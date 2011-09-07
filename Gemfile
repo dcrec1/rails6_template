@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc4'
+gem 'rails', '3.1.0'
 
 gem 'sqlite3'
 
@@ -12,9 +12,13 @@ gem "friendly_id"
 gem "compass"
 gem "hoptoad_notifier"
 gem "inploy"
-gem 'sass-rails', "~> 3.1.0.rc"
-gem 'coffee-script'
-gem 'uglifier'
+
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
 gem 'jquery-rails'
 
 group :development do
