@@ -7,13 +7,12 @@ solr
 public/cache
 public/system
 public/stylesheets
-public/javascripts/*_packaged.js
+public/javascripts
 doc/specs.html
 doc/features.html
 tags
 *.sw?
 *~
-*.orig
 rerun.txt
 .bundle
 db/schema.rb
@@ -24,3 +23,5 @@ spec/requests
 spec/routing
 spec/views
 capybara*
+.sass-cache
+*.orig
