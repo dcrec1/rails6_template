@@ -25,3 +25,7 @@ spec/views
 capybara*
 .sass-cache
 *.orig
+public/assets
+app/assets/**/*.css
+app/assets/**/*.js
+.rvmrc
