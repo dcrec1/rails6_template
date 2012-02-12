@@ -2,18 +2,20 @@
 %html
   %head
     %title
-    = raw stylesheet_link_merged('screen', :media => 'screen, projection')
-    = raw stylesheet_link_merged('print', :media => 'print')
-    /[if lt IE 8]
-      = raw stylesheet_link_merged('ie', :media => 'screen, projection')
-      %script{:src => "http://html5shiv.googlecode.com/svn/trunk/html5.js" }
+    = stylesheet_link_tag "application", :media => 'screen, projection'
+    = stylesheet_link_tag "print", :media => 'print'
     = csrf_meta_tag
   %body
-    #container
-      %header HEADER
-      %aside SIDEBAR
-      %section#content= yield
-      %footer FOOTER
-    %script{ :type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js" }
-    %script{ :type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" }
-    = raw javascript_include_merged(:base)
+    %header
+
+    %section#content
+      #flash
+        - flash.each do |key, value|
+          %div{ class: key }= value
+
+      = yield
+
+    %footer
+
+    = javascript_include_tag "application"
+    = yield :javascripts
