@@ -1,62 +1,55 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.2.0'
 
-gem 'sqlite3'
-
+gem "rails_admin", git: 'git://github.com/sferik/rails_admin.git'
 gem "haml-rails"
 gem "inherited_resources"
+gem "kaminari"
 gem "devise"
 gem "formtastic"
 gem "friendly_id"
-gem "compass"
-gem "hoptoad_notifier"
+gem 'jquery-rails'
+
+gem "airbrake"
 gem "inploy"
 
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'compass-rails'
   gem 'uglifier'
 end
-
-gem 'jquery-rails'
 
 group :development do
   gem "autotest"
   gem "autotest-notification"
-  gem "rails3-generators", :git => "git://github.com/indirect/rails3-generators.git"
-  gem "metric_fu", ">=1.5.1"
+  gem "mailcatcher"
+  gem "faker"
 end
 
 group :development, :test do
   gem "factory_girl_rails"
-  gem "rspec-rails", ">=2.0.1"
-  gem 'evergreen', :require => 'evergreen/rails'
-  platforms :mri_18 do
-    gem "ruby-debug"
-  end
-  platforms :mri_19 do
-    gem "ruby-debug19", :require => 'ruby-debug'
-  end
+  gem "rspec-rails"
+  gem "ruby-debug19"
+  gem 'sqlite3'
 end
 
-group :test do
-  gem "rspec", ">=2.0.1"
-  gem "remarkable", ">=4.0.0.alpha4"
-  gem "remarkable_activemodel", ">=4.0.0.alpha4"
-  gem "remarkable_activerecord", ">=4.0.0.alpha4"
+group :test do  
   gem 'turn', :require => false
+  gem "rspec"
 end
 
 group :cucumber do
-  gem "cucumber", ">=0.6.3"
-  gem "cucumber-rails", ">=0.3.2"
-  gem "capybara", ">=0.3.6"
-  gem "database_cleaner", ">=0.5.0"
-  gem "spork", ">=0.8.4"
-  gem "pickle", ">=0.4.2"
+  gem "cucumber-rails"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "spork"
+  gem "pickle"
 end
 
 group :production do
-  gem "newrelic_rpm", ">=2.12.3"
+  gem "mysql2"
+  gem "newrelic_rpm"
+  gem 'unicorn'
 end
