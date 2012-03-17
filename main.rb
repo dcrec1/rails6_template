@@ -2,7 +2,7 @@ run "rm -Rf .gitignore README public/index.html test app/views/layouts/*"
 
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/rails31/Gemfile' -O Gemfile"
 
-run "bundle"
+run "bundle install --binstubs"
 
 application  <<-GENERATORS
 config.generators do |g|
