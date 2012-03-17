@@ -29,3 +29,4 @@ public/assets
 app/assets/**/*.css
 app/assets/**/*.js
 .rvmrc
+bin
