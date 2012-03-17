@@ -3,14 +3,13 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.2'
 
 gem "rails_admin", git: 'git://github.com/sferik/rails_admin.git'
-gem "haml-rails"
+gem "haml"
 gem "inherited_resources"
 gem "kaminari"
 gem "devise"
 gem "formtastic"
 gem "friendly_id"
 gem 'jquery-rails'
-
 gem "airbrake"
 gem "inploy"
 
