@@ -19,6 +19,7 @@ generate "formtastic:install"
 generate "devise:install"
 generate "devise User"
 generate "devise Admin"
+generate "rails_admin:install"
 
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/rails31/gitignore' -O .gitignore"
 run "wget --no-check-certificate 'https://github.com/dcrec1/rails3_template/raw/rails31/application.html.haml' -O app/views/layouts/application.html.haml"
