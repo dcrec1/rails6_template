@@ -18,6 +18,7 @@ group :assets do
   gem 'coffee-rails'
   gem 'compass-rails'
   gem 'uglifier'
+  gem 'bootstrap-sass'
 end
 
 group :development do
