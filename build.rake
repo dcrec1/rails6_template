@@ -1,1 +1,1 @@
-task :build => %w(db:migrate spec cucumber)
+task :build => %w(db:migrate spec)
