@@ -1,55 +1,48 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.8'
 
-gem "rails_admin", git: 'git://github.com/sferik/rails_admin.git'
+gem "rails_admin", :git => 'git://github.com/sferik/rails_admin.git'
 gem "haml"
 gem "inherited_resources"
+gem "has_scope"
 gem "kaminari"
 gem "devise"
 gem "formtastic"
 gem "friendly_id"
 gem 'jquery-rails'
-gem "airbrake"
-gem "inploy"
+gem 'airbrake'
 
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'compass-rails'
   gem 'uglifier'
-  gem 'bootstrap-sass'
 end
 
 group :development do
-  gem "autotest"
-  gem "autotest-notification"
+  gem 'rack-livereload'
   gem "mailcatcher"
   gem "faker"
 end
 
 group :development, :test do
-  gem "factory_girl_rails"
+  gem 'guard-rspec'
+  gem 'guard-livereload'
   gem "rspec-rails"
-  gem "ruby-debug19"
   gem 'sqlite3'
+  gem "pry-rails"
 end
 
-group :test do  
+group :test do
   gem 'turn', :require => false
   gem "rspec"
-end
-
-group :cucumber do
-  gem "cucumber-rails"
   gem "capybara"
-  gem "database_cleaner"
-  gem "spork"
-  gem "pickle"
+  gem "launchy"
+  gem "factory_girl_rails"
 end
 
 group :production do
-  gem "mysql2"
+  gem 'mysql'
   gem "newrelic_rpm"
-  gem 'unicorn'
 end
