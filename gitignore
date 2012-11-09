@@ -19,7 +19,6 @@ db/schema.rb
 specifications
 cache
 gems
-spec/requests
 spec/routing
 spec/views
 capybara*
@@ -30,3 +29,5 @@ app/assets/**/*.css
 app/assets/**/*.js
 .rvmrc
 bin
+public/uploads
+dump.rdb
