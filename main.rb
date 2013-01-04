@@ -20,6 +20,9 @@ generate "formtastic:install"
 generate "devise:install"
 generate "devise User"
 generate "devise Admin"
+
+run "rake db:migrate"
+
 generate "rails_admin:install"
 
 run "rake db:migrate"
