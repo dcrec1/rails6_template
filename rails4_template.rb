@@ -41,8 +41,8 @@ end
 commit 'bootstrap-sass', gem: true do
   run "rm app/assets/stylesheets/application.css"
   file 'app/assets/stylesheets/application.sass', <<-SASS
-  @import "bootstrap-sprockets"
-  @import "bootstrap"
+@import "bootstrap-sprockets"
+@import "bootstrap"
   SASS
 end
 commit 'font-awesome-rails', gem: true
@@ -70,11 +70,11 @@ end
 
 commit 'db:bootstrap task' do
   file 'lib/tasks/bootstrap.rake', <<-TASK
-  namespace :db do
-    desc 'Bootstraps with demo data'
-    task bootstrap: :environment do
-    end
+namespace :db do
+  desc 'Bootstraps with demo data'
+  task bootstrap: :environment do
   end
+end
   TASK
 end
 
