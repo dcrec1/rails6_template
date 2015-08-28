@@ -24,8 +24,8 @@ commit 'factory_girl', gem: true, group: :test
 commit 'capybara', gem: true, group: :test
 commit 'capybara-screenshot', gem: true, group: :test
 commit 'simple_form', gem: true, generators: [['simple_form:install', '--bootstrap']]
-commit 'binding_of_caller', gem: true
-commit 'better_errors', gem: true
+commit 'binding_of_caller', gem: true, group: :development
+commit 'better_errors', gem: true, group: :development
 commit 'inherited_resources', gem: true
 commit 'rubocop', gem: true
 commit 'poltergeist', gem: true, group: :test
