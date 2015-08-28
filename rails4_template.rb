@@ -18,7 +18,7 @@ end
 
 commit 'rails_admin', gem: true, generators: %w(rails_admin:install)
 commit 'friendly_id', gem: true, generators: %w(friendly_id)
-commit 'rspec', gem: true, group: [:development, :test], generators: %w(rspec:install)
+commit 'rspec-rails', gem: true, group: [:development, :test], generators: %w(rspec:install)
 commit 'spring-commands-rspec', gem: true, group: :development
 commit 'factory_girl', gem: true, group: :test
 commit 'capybara', gem: true, group: :test
