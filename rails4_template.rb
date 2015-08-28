@@ -63,8 +63,8 @@ end
 
 commit 'Procfile' do
   file 'Procfile', <<-PROCFILE
-  db: postgres -D /usr/local/var/postgres
-  web: rails s
+db: postgres -D /usr/local/var/postgres
+web: rails s
   PROCFILE
 end
 
