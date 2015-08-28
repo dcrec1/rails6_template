@@ -34,7 +34,7 @@ commit 'simplecov-rcov', gem: true, group: :test
 commit 'rollbar', gem: true
 commit 'newrelic_rpm', gem: true
 
-commit 'dotenv-rails', gem: true do
+commit 'dotenv-rails', gem: true, group: :development do
   run 'touch .env'
 end
 
