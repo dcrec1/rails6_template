@@ -27,7 +27,7 @@ commit 'simple_form', gem: true, generators: [['simple_form:install', '--bootstr
 commit 'binding_of_caller', gem: true, group: :development
 commit 'better_errors', gem: true, group: :development
 commit 'inherited_resources', gem: true
-commit 'rubocop', gem: true
+commit 'rubocop', gem: true, group: :development
 commit 'poltergeist', gem: true, group: :test
 commit 'simplecov', gem: true, group: :test
 commit 'simplecov-rcov', gem: true, group: :test
