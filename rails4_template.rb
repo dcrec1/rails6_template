@@ -10,7 +10,7 @@ git :init
 git add: '.'
 git commit: "-am 'Initial commit'"
 
-commit 'haml', gem: true
+commit 'haml', gem: truesha
 
 commit 'devise', gem: true, generators: ['devise:install', ['devise', 'Admin']] do
   environment "config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }", env: 'development'
@@ -48,16 +48,16 @@ end
 commit 'font-awesome-rails', gem: true
 
 commit 'spec shared connections' do
-  file 'spec/support/shared_connection', <<-SHARED
-    class ActiveRecord::Base
-      mattr_accessor :shared_connection
-      @@shared_connection = nil
+file 'spec/support/shared_connection.rb', <<-SHARED
+class ActiveRecord::Base
+  mattr_accessor :shared_connection
+  @@shared_connection = nil
 
-      def self.connection
-        @@shared_connection || retrieve_connection
-      end
-    end
-    ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
+  def self.connection
+    @@shared_connection || retrieve_connection
+  end
+end
+ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
   SHARED
 end
 
