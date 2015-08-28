@@ -78,6 +78,13 @@ commit 'db:bootstrap task' do
   TASK
 end
 
+commit 'factories file' do
+  file 'spec/support/factories.rb', <<-FACTORIES
+FactoryGirl.define do
+end
+  FACTORIES
+end
+
 application  <<-GENERATORS
     config.generators do |g|
       g.assets false
