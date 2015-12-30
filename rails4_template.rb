@@ -10,7 +10,7 @@ git :init
 git add: '.'
 git commit: "-am 'Initial commit'"
 
-commit 'haml', gem: truesha
+commit 'haml', gem: true
 
 commit 'devise', gem: true, generators: ['devise:install', ['devise', 'Admin']] do
   environment "config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }", env: 'development'
