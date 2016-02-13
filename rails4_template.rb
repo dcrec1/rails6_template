@@ -1,6 +1,6 @@
 def commit(name, gem: false, group: false, generators: [])
   group ?  gem_group(*group) { gem name } : gem(name) if gem
-  generators.each { |generator| generate *generator }
+  generators.each { |generator| after_bundle { generate *generator } }
   yield if block_given?
   git add: '.'
   git commit: "-am 'add #{name}'"
