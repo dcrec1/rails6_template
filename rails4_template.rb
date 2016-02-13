@@ -33,7 +33,6 @@ commit 'simplecov', gem: true, group: :test
 commit 'simplecov-rcov', gem: true, group: :test
 commit 'rollbar', gem: true
 commit 'newrelic_rpm', gem: true
-commit 'puma', gem: true, group: :production
 
 commit 'dotenv-rails', gem: true, group: :development do
   run 'touch .env'
