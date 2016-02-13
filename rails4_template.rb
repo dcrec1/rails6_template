@@ -16,7 +16,6 @@ commit 'devise', gem: true, generators: ['devise:install', ['devise', 'Admin']] 
   environment "config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }", env: 'development'
 end
 
-commit 'rails_admin', gem: true, generators: %w(rails_admin:install)
 commit 'friendly_id', gem: true, generators: %w(friendly_id)
 commit 'rspec-rails', gem: true, group: [:development, :test], generators: %w(rspec:install)
 commit 'spring-commands-rspec', gem: true, group: :development
@@ -32,7 +31,6 @@ commit 'poltergeist', gem: true, group: :test
 commit 'simplecov', gem: true, group: :test
 commit 'simplecov-rcov', gem: true, group: :test
 commit 'rollbar', gem: true
-commit 'newrelic_rpm', gem: true
 
 commit 'dotenv-rails', gem: true, group: :development do
   run 'touch .env'
@@ -100,13 +98,6 @@ after_bundle do
   git add: '.'
   git commit: "-am 'install binstubs'"
   puts <<-CODE
-    # ADD TO config/initializers/rails_admin.rb
-
-    config.authenticate_with do
-      warden.authenticate! scope: :admin
-    end
-    config.current_user_method(&:current_admin)
-
     # ADD TO spec/rails_helper.rb
 
     require 'simplecov'
