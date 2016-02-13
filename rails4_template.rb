@@ -28,7 +28,9 @@ commit 'better_errors', gem: true, group: :development
 commit 'inherited_resources', gem: true
 commit 'rubocop', gem: true, group: :development
 commit 'poltergeist', gem: true, group: :test
-commit 'simplecov', gem: true, group: :test
+commit 'simplecov', gem: true, group: :test do
+  inject_into_file('.gitignore') { puts "coverage" }
+end
 commit 'simplecov-rcov', gem: true, group: :test
 commit 'rollbar', gem: true
 
@@ -83,7 +85,7 @@ end
   FACTORIES
 end
 
-application  <<-GENERATORS
+application <<-GENERATORS
     config.generators do |g|
       g.assets false
       g.helper false
