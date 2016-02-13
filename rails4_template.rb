@@ -95,6 +95,10 @@ git add: '.'
 git commit: "-am 'configure generators'"
 
 after_bundle do
+  rake "db:migrate"
+  git add: '.'
+  git commit: "-am 'migrate database'"
+  
   git add: '.'
   git commit: "-am 'install binstubs'"
   puts <<-CODE
