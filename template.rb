@@ -29,6 +29,7 @@ commit 'inherited_resources', gem: true
 commit 'rubocop', gem: true, group: :development
 commit 'poltergeist', gem: true, group: :test
 commit 'simplecov', gem: true, group: :test do
+  run 'touch .gitignore'
   inject_into_file('.gitignore') { puts "coverage" }
 end
 commit 'simplecov-rcov', gem: true, group: :test
