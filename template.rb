@@ -1,5 +1,6 @@
-def commit(name, gem: false, group: false, generators: [])
-  group ?  gem_group(*group) { gem name } : gem(name) if gem
+def commit(name, gem: false, group: false, generators: [], github: nil)
+  gem_params = github ? { github: github } : {}
+  group ?  gem_group(*group) { gem name, gem_params } : gem(name, gem_params) if gem
   generators.each { |generator| after_bundle { generate *generator } }
   yield if block_given?
   git add: '.'
@@ -25,7 +26,7 @@ commit 'capybara-screenshot', gem: true, group: :test
 commit 'simple_form', gem: true, generators: [['simple_form:install', '--bootstrap']]
 commit 'binding_of_caller', gem: true, group: :development
 commit 'better_errors', gem: true, group: :development
-commit 'inherited_resources', gem: true
+commit 'inherited_resources', gem: true, github: 'josevalim/inherited_resources'
 commit 'rubocop', gem: true, group: :development
 commit 'poltergeist', gem: true, group: :test
 commit 'simplecov', gem: true, group: :test do
