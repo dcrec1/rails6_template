@@ -48,21 +48,6 @@ commit 'bootstrap-sass', gem: true do
   SASS
 end
 commit 'font-awesome-rails', gem: true
-
-commit 'spec shared connections' do
-file 'spec/support/shared_connection.rb', <<-SHARED
-class ActiveRecord::Base
-  mattr_accessor :shared_connection
-  @@shared_connection = nil
-
-  def self.connection
-    @@shared_connection || retrieve_connection
-  end
-end
-ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
-  SHARED
-end
-
 commit 'Procfile' do
   file 'Procfile', <<-PROCFILE
 db: postgres -D /usr/local/var/postgres
