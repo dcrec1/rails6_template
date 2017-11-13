@@ -84,7 +84,7 @@ git add: '.'
 git commit: "-am 'configure generators'"
 
 after_bundle do
-  rake "db:migrate"
+  rake "db:create db:migrate"
   git add: '.'
   git commit: "-am 'migrate database'"
   
