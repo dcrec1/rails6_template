@@ -22,13 +22,11 @@ commit 'rspec-rails', gem: true, group: [:development, :test], generators: %w(rs
 commit 'spring-commands-rspec', gem: true, group: :development
 commit 'factory_girl', gem: true, group: :test
 commit 'capybara', gem: true, group: :test
-commit 'capybara-screenshot', gem: true, group: :test
 commit 'simple_form', gem: true, generators: [['simple_form:install', '--bootstrap']]
 commit 'binding_of_caller', gem: true, group: :development
 commit 'better_errors', gem: true, group: :development
 commit 'inherited_resources', gem: true, github: 'josevalim/inherited_resources'
 commit 'rubocop', gem: true, group: :development
-commit 'poltergeist', gem: true, group: :test
 commit 'simplecov', gem: true, group: :test do
   run 'touch .gitignore'
   run 'echo coverage >> .gitignore'
@@ -99,12 +97,6 @@ after_bundle do
       SimpleCov::Formatter::RcovFormatter
     ]
     SimpleCov.start
-
-    require 'capybara/rails'
-    require 'capybara/rspec'
-    require 'capybara/poltergeist'
-    require 'capybara-screenshot/rspec'
-    Capybara.javascript_driver = :poltergeist
 
     config.include FactoryGirl::Syntax::Methods
   CODE
