@@ -53,7 +53,7 @@ db: postgres -D /usr/local/var/postgres
 web: rails s
   PROCFILE
 end
-
+commit 'jquery-rails', gem: true
 commit 'db:bootstrap task' do
   file 'lib/tasks/bootstrap.rake', <<-TASK
 namespace :db do
