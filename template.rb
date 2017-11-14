@@ -40,10 +40,9 @@ commit 'dotenv-rails', gem: true, group: :development do
   run 'touch .env'
 end
 
-commit 'bootstrap-sass', gem: true do
+commit 'bootstrap', gem: true do
   run "rm app/assets/stylesheets/application.css"
   file 'app/assets/stylesheets/application.sass', <<-SASS
-@import "bootstrap-sprockets"
 @import "bootstrap"
   SASS
 end
