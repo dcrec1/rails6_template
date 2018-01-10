@@ -20,7 +20,7 @@ end
 commit 'friendly_id', gem: true, generators: %w(friendly_id)
 commit 'rspec-rails', gem: true, group: [:development, :test], generators: %w(rspec:install)
 commit 'spring-commands-rspec', gem: true, group: :development
-commit 'factory_girl', gem: true, group: :test
+commit 'factory_bot', gem: true, group: :test
 commit 'capybara', gem: true, group: :test
 commit 'simple_form', gem: true, generators: [['simple_form:install', '--bootstrap']]
 commit 'binding_of_caller', gem: true, group: :development
@@ -64,7 +64,7 @@ end
 
 commit 'factories file' do
   file 'spec/support/factories.rb', <<-FACTORIES
-FactoryGirl.define do
+FactoryBot.define do
 end
   FACTORIES
 end
