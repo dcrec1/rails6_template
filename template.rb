@@ -13,9 +13,7 @@ git commit: "-am 'Initial commit'"
 
 commit 'haml', gem: true
 
-commit 'devise', gem: true, generators: ['devise:install', ['devise', 'Admin']] do
-  environment "config.action_mailer.default_url_options = { host: 'localhost', port: 5100 }", env: 'development'
-end
+commit 'devise', gem: true, generators: ['devise:install', ['devise', 'Admin']]
 
 commit 'friendly_id', gem: true, generators: %w(friendly_id)
 commit 'rspec-rails', gem: true, group: [:development, :test], generators: %w(rspec:install)
