@@ -36,20 +36,14 @@ commit 'dotenv-rails', gem: true, group: :development do
   run 'touch .env'
 end
 
-commit 'bootstrap', gem: true do
-  run "rm app/assets/stylesheets/application.css"
-  file 'app/assets/stylesheets/application.sass', <<-SASS
-@import "bootstrap"
-  SASS
-end
 commit 'font-awesome-rails', gem: true
 commit 'Procfile' do
   file 'Procfile', <<-PROCFILE
 db: postgres -D /usr/local/var/postgres
+redis: redis-server /usr/local/etc/redis.conf
 web: rails s
   PROCFILE
 end
-commit 'jquery-rails', gem: true
 commit 'db:bootstrap task' do
   file 'lib/tasks/bootstrap.rake', <<-TASK
 namespace :db do
@@ -96,6 +90,6 @@ after_bundle do
     ]
     SimpleCov.start
 
-    config.include FactoryGirl::Syntax::Methods
+    config.include FactoryBot::Syntax::Methods
   CODE
 end
