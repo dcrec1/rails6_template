@@ -4,6 +4,6 @@ Since Github started forcing SSL in all its URLs, we need to download the templa
 
 Then whenever you want to create a new project, just do:
 
-<pre><code>rails new app_name -T -m /tmp/template.rb</code></pre>
+<pre><code>rails new app_name -d postgresql -S -T -m /tmp/template.rb</code></pre>
 
 Change <tt>app_name</tt> for your project name. You can configure what you need and run <tt>rake db:migrate</tt> to get started.
