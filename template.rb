@@ -30,6 +30,7 @@ commit 'simplecov', gem: true, group: :test do
   run 'echo coverage >> .gitignore'
 end
 commit 'simplecov-rcov', gem: true, group: :test
+commit 'selenium-webdriver', gem: true, group: :test
 commit 'rollbar', gem: true
 
 commit 'dotenv-rails', gem: true, group: :development do
@@ -92,5 +93,9 @@ after_bundle do
     SimpleCov.start
 
     config.include FactoryBot::Syntax::Methods
+
+    config.before :each, type: :system do
+      driven_by :selenium, using: :headless_chrome
+    end
   CODE
 end
