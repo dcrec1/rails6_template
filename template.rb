@@ -36,7 +36,6 @@ commit 'rollbar', gem: true
 commit 'dotenv-rails', gem: true, group: :development do
   run 'touch .env'
 end
-commit 'webpacker', gem: true, generators: %w(webpacker:install)
 
 commit 'font-awesome-rails', gem: true
 commit 'Procfile' do
