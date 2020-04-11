@@ -83,7 +83,6 @@ after_bundle do
     # ADD TO spec/rails_helper.rb
 
     require 'simplecov'
-    require 'simplecov-rcov'
     SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter]
     SimpleCov.start
 
