@@ -29,7 +29,6 @@ commit 'simplecov', gem: true, group: :test do
   run 'touch .gitignore'
   run 'echo coverage >> .gitignore'
 end
-commit 'simplecov-rcov', gem: true, group: :test
 commit 'selenium-webdriver', gem: true, group: :test
 commit 'rollbar', gem: true
 
@@ -85,10 +84,7 @@ after_bundle do
 
     require 'simplecov'
     require 'simplecov-rcov'
-    SimpleCov.formatters = [
-      SimpleCov::Formatter::HTMLFormatter,
-      SimpleCov::Formatter::RcovFormatter
-    ]
+    SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter]
     SimpleCov.start
 
     config.include FactoryBot::Syntax::Methods
