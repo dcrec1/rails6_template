@@ -24,7 +24,7 @@ commit 'simple_form', gem: true, generators: [['simple_form:install', '--bootstr
 commit 'binding_of_caller', gem: true, group: :development
 commit 'better_errors', gem: true, group: :development
 commit 'inherited_resources', gem: true, github: 'josevalim/inherited_resources'
-commit 'rubocop', gem: true, group: :development
+commit 'rubocop-rails', gem: true, group: :development
 commit 'simplecov', gem: true, group: :test do
   run 'touch .gitignore'
   run 'echo coverage >> .gitignore'
@@ -36,7 +36,6 @@ commit 'dotenv-rails', gem: true, group: :development do
   run 'touch .env'
 end
 
-commit 'font-awesome-rails', gem: true
 commit 'Procfile' do
   file 'Procfile', <<-PROCFILE
 db: postgres -D /usr/local/var/postgres
@@ -66,6 +65,7 @@ application <<-GENERATORS
       g.assets false
       g.helper false
       g.controller_specs false
+      g.request_specs false
       g.view_specs false
     end
 GENERATORS
